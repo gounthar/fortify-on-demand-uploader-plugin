@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.46</version>
+        <version>4.51</version>
         <relativePath />
     </parent>
 
@@ -14,12 +14,22 @@
     <packaging>hpi</packaging>
 
     <properties>
-        <jenkins.version>2.289</jenkins.version>
-        <java.level>8</java.level>
+        <jenkins.version>2.346.3</jenkins.version>
         <jenkins-test-harness.version>2.47</jenkins-test-harness.version>
         <disabledTestInjection>true</disabledTestInjection>
         <skipTests>false</skipTests>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-weekly</artifactId>
+                <version>2612.v3d6a_2128c0ef</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <!--
     <dependencyManagement>
         <dependencies>
@@ -83,20 +93,17 @@
             <groupId>io.jenkins</groupId>
             <artifactId>configuration-as-code</artifactId>
             <scope>compile</scope>
-            <version>1.47</version>
         </dependency>
         <!-- for Configuration as a Code test-->
         <dependency>
             <groupId>io.jenkins.configuration-as-code</groupId>
             <artifactId>test-harness</artifactId>
             <scope>test</scope>
-            <version>1.47</version>
         </dependency>
         <!-- for Jenkins Pipelines -->
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-step-api</artifactId>
-            <version>2.19</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
         <dependency>
@@ -120,7 +127,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
@@ -132,22 +138,18 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>plain-credentials</artifactId>
-            <version>1.5</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>credentials</artifactId>
-            <version>2.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>structs</artifactId>
-            <version>1.19</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci</groupId>
@@ -162,7 +164,6 @@
         <dependency>
             <groupId>io.jenkins.plugins</groupId>
             <artifactId>jquery3-api</artifactId>
-            <version>3.5.1-2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
